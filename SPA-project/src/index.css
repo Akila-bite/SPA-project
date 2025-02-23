@@ -22,13 +22,14 @@ a:hover {
   color: #535bf2;
 }
 
+
 body {
   margin: 0;
-  display: flex;
-  place-items: center;
-  min-width: 320px;
-  min-height: 100vh;
+  padding: 10px;
+  background-color: beige;
+  color: #262626;
 }
+
 
 h1 {
   font-size: 3.2em;
@@ -67,36 +68,21 @@ button:focus-visible {
   }
 }
 
-/* HEADER STYLES */
-header {
+/* NAV STYLES */
+nav {
+  background: #333;
+  color: white;
+  padding: 10px;
   display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 11px;
-  height: 80px;
-
+  justify-content: space-between;
 }
-
-header > img {
-  width: 50px;
-}
-
-header > h1 {
-  font-weight: 400px;
-}
-
 
 /* FORM STYLES */
 * {
   box-sizing: border-box;
 }
 
-body {
-  margin: 0;
-  padding: 10px;
-  background-color: #2DD4BF;
-  color: #262626;
-}
+
 
 h1 {
   text-align: center;

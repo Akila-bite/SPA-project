@@ -1,7 +1,7 @@
 
 
 
-export default function signUpForm() {
+export default function Form() {
     
   return (
     <section>
