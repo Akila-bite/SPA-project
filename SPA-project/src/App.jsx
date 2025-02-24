@@ -27,6 +27,7 @@
 
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Form from "./Components/Form";
+import Header from "./Components/Header";
 import Navbar from "./Components/Navbar";
 import RecipeCard from "./Components/RecipeCard";
 import SearchBar from "./Components/SearchBar";
@@ -39,7 +40,10 @@ export default function App() {
     return (
        <div> 
         <Router>
+            <Header>
             <Navbar />
+            </Header>
+            
             <SearchBar />
             <Form />
             <RecipeCard />
