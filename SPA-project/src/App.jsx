@@ -37,6 +37,7 @@ import FavoriteRecipes from "./Pages/FavoriteRecipes";
 
 export default function App() {
     return (
+       <div> 
         <Router>
             <Navbar />
             <SearchBar />
@@ -49,5 +50,6 @@ export default function App() {
             </Routes>
             <Footer />
         </Router>
+        </div>
     );
 }
