@@ -22,15 +22,27 @@ a:hover {
   color: #535bf2;
 }
 
+/* STYLIN FOR ENTIRE APPLICATION */
+.app {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh; /* Ensures full height of viewport */
+}
+
+main {
+  flex-grow: 1;
+}
+
 
 body {
   /* margin: 0; */
   margin-top: 70px;
   display: flex;
   place-items: center;
-  min-width: 320px;
+  width: 100%;
+  /* min-width: 320px; */
   min-height: 100vh;
-  padding: 10px;
+  padding: 0px;
   background-color: beige;
   color: #262626;
 }
@@ -85,12 +97,18 @@ button:focus-visible {
 .navbar {
   display: flex;
   align-items: center;
+  justify-content: space-between;
+  max-width: 100%;
+  padding: 0 20px;
+  overflow: hidden;
 }
 
 .nav-links {
   list-style: none;
   display: flex;
-  gap: 20px;
+  gap: 30px; 
+  flex-wrap: wrap;
+  margin-right: 30px; 
 }
 
 .nav-links a {
@@ -100,40 +118,39 @@ button:focus-visible {
   display: flex;
   align-items: center;
   gap: 5px;
+  flex-shrink: 0; /* Prevents icons from getting squeezed */
 }
 
-.nav-links a:hover {
-  color: #2d7a46;
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: beige;
+  height: 70px;
+  padding: 10px 20px; /* Adjusted for spacing */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  z-index: 1000;
+  overflow: hidden;
 }
 
-.material-icons {
-  font-size: 20px;
-  vertical-align: middle;
-}
-
-/* Mobile styles */
-.menu-toggle {
-  display: none;
-  font-size: 24px;
-  background: none;
-  border: none;
-  cursor: pointer;
+.logo {
+  height: 50px; /* Slightly reduced to ensure space */
 }
 
 @media (max-width: 768px) {
-  .menu-toggle {
-    display: block;
-  }
-
   .nav-links {
-    display: none;
     flex-direction: column;
     position: absolute;
     top: 60px;
-    right: 20px;
+    right: 10px; /* Adjusted to avoid overflow */
     background: white;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
     padding: 10px;
+    width: auto;
   }
 
   .nav-links.open {
@@ -142,24 +159,27 @@ button:focus-visible {
 }
 
 
-
-/* HEADER STYLES */
-.header {
-  position: fixed; /* Keeps it at the top */
-  top: 0;
-  left: 0;
-  width: 100%; /* Ensures it spans the full width */
-  background-color: white;
-  height: 70px;
-  padding: 10px 15px;
+/* SEARCHBAR */
+.search-bar {
+  width: 100%;
+  max-width: 400px;
+  margin-right: 20PX;
   display: flex;
-  justify-content: space-between;
   align-items: center;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-  z-index: 1000; /* Ensures it stays above other elements */
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  padding: 8px;
 }
 
 
-.logo {
-  height: 70px; 
+
+
+/* FOOTER */
+.footer {
+  width: 100vw;
+  background: #f8f8f8;
+  text-align: center;
+  padding: 15px;
+  border-top: 1px solid #ddd;
+  color: #666;
 }

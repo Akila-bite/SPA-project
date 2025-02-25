@@ -1,7 +1,10 @@
-export default function Footer() {
+export default function Footer () {
     return (
-        <div>
-            <h1>Footer</h1>
-        </div>
+      <footer className="footer">
+        <p>&copy; {new Date().getFullYear()} Foodify. All rights reserved.</p>
+      </footer>
     );
-}
+  };
+  
+  
+  

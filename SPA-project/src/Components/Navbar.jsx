@@ -6,9 +6,9 @@ export default function Navbar() {
 
   return (
     <nav className="navbar">
-      <button className="menu-toggle" onClick={() => setMenuOpen(!menuOpen)}>
-        <span className="material-icons">menu</span> {/* Google Material Icon */}
-      </button>
+      {/* <button className="menu-toggle" onClick={() => setMenuOpen(!menuOpen)}>
+        <span className="material-icons">menu</span> {/* Google Material Icon }
+      </button> */}
       <ul className={`nav-links ${menuOpen ? "open" : ""}`}>
         <li>
           <a href="#"><span className="material-icons">home</span> Home</a>
