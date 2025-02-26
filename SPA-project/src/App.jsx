@@ -34,6 +34,7 @@ import Footer from "./Components/Footer";
 import Recipes from "./Pages/Recipes";
 import Home from "./Pages/Home";
 import FavoriteRecipes from "./Pages/FavoriteRecipes";
+import About from "./Pages/About";
 
 export default function App() {
     return (
@@ -49,6 +50,7 @@ export default function App() {
         <Route path="/" element={<Home />} />
         <Route path="/recipes" element={<Recipes />} />
         <Route path="/favorites" element={<FavoriteRecipes />} />
+        <Route path="/About" element = {<About />} />
     </Routes>
 </Router>
 </main>
