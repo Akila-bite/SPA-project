@@ -40,17 +40,17 @@ export default function About () {
 
       {/* Contact & Social Media Section */}
       <div className="text-center mt-5">
-        <h3 className="text-success">Get in Touch</h3>
+        <h3 className="text-success">See more of your favorite recipes and creators</h3>
         <p>Email: support@foodify.com</p>
         <div className="d-flex justify-content-center gap-3">
           <a href="https://twitter.com" target="_blank" rel="noopener noreferrer">
             <i className="bi bi-twitter fs-3 text-primary"></i>
           </a>
-          <a href="https://github.com" target="_blank" rel="noopener noreferrer">
-            <i className="bi bi-github fs-3 text-dark"></i>
+          <a href="https://instsgram.com" target="_blank" rel="noopener noreferrer">
+            <i className="bi bi-instagram fs-3 text-dark"></i>
           </a>
-          <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer">
-            <i className="bi bi-linkedin fs-3 text-primary"></i>
+          <a href="https://youtube.com" target="_blank" rel="noopener noreferrer">
+            <i className="bi bi-youtube fs-3 text-primary"></i>
           </a>
         </div>
       </div>
