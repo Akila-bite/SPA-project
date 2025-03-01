@@ -176,3 +176,27 @@ body {
   border-top: none;
   color: #666;
 }
+
+/* HOME PAGE STYLES */
+
+/* Full-width welcome image */
+.welcome-image {
+  width: 100vw;
+  height: auto;
+  display: block;
+}
+
+/* Make the 3 category images appear in a row */
+.recipe-categories {
+  display: flex;
+  justify-content: center; /* Center images horizontally */
+  align-items: center; /* Align images vertically */
+  gap: 20px; /* Space between images */
+  padding: 20px;
+}
+
+.recipe-categories img {
+  width: 30%; /* Adjust size */
+  height: auto;
+  object-fit: contain;
+}

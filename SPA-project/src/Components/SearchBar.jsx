@@ -3,9 +3,11 @@ import {useState} from "react";
 export default function SearchBar ({ onSearch }) {
   const [query, setQuery] = useState("");
 
-  const handleSearch = (e) => {
-    e.preventDefault();
+  // Updates the query as the user is typing, triggering the search instantly
+  const handleInputChange = (e) => {
+    setQuery(e.target.value);
     if (onSearch) onSearch(query);
+  
   };
 
   return (
@@ -19,7 +21,7 @@ export default function SearchBar ({ onSearch }) {
           placeholder="Search recipes..."
           className="flex-grow outline-none bg-transparent text-gray-700 placeholder-gray-400"
           value={query}
-          onChange={(e) => setQuery(e.target.value)}
+          onChange={handleInputChange}
         />
         <button type="submit" className="text-gray-500 hover:text-green-600">
           <span className="material-icons">search</span>
