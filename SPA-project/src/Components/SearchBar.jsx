@@ -14,21 +14,17 @@ export default function SearchBar ({ onSearch }) {
   };
 
   return (
-    <div className="w-full flex justify-center mt-4 px-4">
-      <form 
-        onSubmit={handleSearch} 
-        className="flex w-full max-w-md bg-white border border-gray-300 rounded-lg shadow-sm px-3 py-2 items-center"
-      >
+    <div className="search-container">
+      <form onSubmit={handleSearch} className="search-form">
         <input
           type="text"
           placeholder="Search recipes..."
-          className="flex-grow outline-none bg-transparent text-gray-700 placeholder-gray-400"
+          className="search-input"
           value={query}
           onChange={handleInputChange}
         />
       </form>
     </div>
   );
-};
-
+};  
 

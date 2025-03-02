@@ -134,7 +134,7 @@ body {
 }
 
 .logo {
-  font-weight: 500;
+  font-weight: bold;
   font-size: 30px;
 }
 
@@ -157,16 +157,68 @@ body {
 
 
 /* SEARCHBAR */
-.search-bar {
+/* .search-bar {
   width: 100%;
-  max-width: 400px;
+  max-width: 600px;
+  height: 24px;
   margin:auto;
   display: flex;
   align-items: center;
   border: 1px solid #ccc;
   border-radius: 8px;
   padding: 8px;
+} */
+
+/* Search Container */
+.search-container {
+  max-width: 400px;
+  display: flex;
+  justify-content: center;
+  padding-left: 16px;
+  padding-right: 16px;
 }
+
+/* Search Form */
+.search-form {
+  display: flex;
+  width: 100%;
+  max-width: 600px;
+  background-color: white;
+  border: 1px solid #d1d5db;
+  border-radius: 50px; 
+  box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.1);
+  padding: 10px 14px;
+  align-items: center;
+  height: 40px;
+}
+
+/* Search Input */
+.search-input {
+  flex-grow: 1;
+  outline: none;
+  background: transparent;
+  color: #374151;
+  font-size: 18px; 
+  border: none;
+  height: 100%; /*fills the navbar height */
+}
+
+.search-input::placeholder {
+  color: #9ca3af;
+  font-size: 18px; /* Match input text size */
+}
+
+/* Optional: Style a search icon inside the form */
+/* .search-icon {
+  font-size: 20px; /* Matches navbar icon size */
+  /* color: #666;
+  cursor: pointer;
+  margin-right: 10px;
+} */ 
+
+
+
+
 
 
 
