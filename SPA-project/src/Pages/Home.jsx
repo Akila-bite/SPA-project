@@ -1,9 +1,9 @@
 import React from "react";
-// import Header from "../Components/Header";
 import welcomeImage from "../assets/Rooibos-honey-Basque-cheesecake.jpg"; 
-import category1 from "../assets/Asian-style-crunchy-stir-fry-wrap.jpg";
-import category2 from "../assets/Boerewors-Meatball-Pasta-Bake-1-1.jpg";
-import category3 from "../assets/Homemade-cinnamon-rolls.webp";
+import category1 from "../assets/Clipped_muesli-with-caramel-bananas.png";
+import category2 from "../assets/Clipped_stir-fry-wrap.png";
+import category3 from "../assets/Clipped_meatball_pasta_bake.png";
+import category4 from "../assets/Clipped_choch-chip-ice-cream-sandwiches.png";
 
 export default function Home() {
 
@@ -11,7 +11,6 @@ export default function Home() {
 return (
  
     <div className="homepage">
-       {/* <Header /> */}
       {/* Main Welcome Image */}
       <img src={welcomeImage} alt="Rooibos Honey Cheesecake" className="welcome-image" />
 
@@ -26,6 +25,9 @@ return (
         <a href="/category3">
           <img src={category3} alt="Category 3" />
         </a>
+       <a href="/category4">
+        <img src={category4} alt="Category 4" />
+       </a>
       </div>
     </div>
 

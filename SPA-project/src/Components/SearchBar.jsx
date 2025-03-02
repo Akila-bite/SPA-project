@@ -6,8 +6,11 @@ export default function SearchBar ({ onSearch }) {
   // Updates the query as the user is typing, triggering the search instantly
   const handleInputChange = (e) => {
     setQuery(e.target.value);
-    if (onSearch) onSearch(query);
-  
+  };
+
+  const handleSearch = (e) => {
+    e.preventDefault();
+    if (onSearch) onSearch(query); // Trigger search only on form submission
   };
 
   return (
@@ -23,9 +26,6 @@ export default function SearchBar ({ onSearch }) {
           value={query}
           onChange={handleInputChange}
         />
-        <button type="submit" className="text-gray-500 hover:text-green-600">
-          <span className="material-icons">search</span>
-        </button>
       </form>
     </div>
   );

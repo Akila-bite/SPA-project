@@ -1,12 +1,12 @@
 
 import Navbar from "./Navbar";
 import SearchBar from "./SearchBar"; 
-import logo from "../assets/Foodify_firstLogo.png";
+
 
 export default function Header() {
   return (
     <header className="header">
-      <img src={logo} alt="Foodify Logo" className="logo" /> {/* Logo image */}
+      <h1 className="logo">Foodify</h1>
       <Navbar /> {/* Include the Navbar component */}
 
       {/* Adding the Searchbar under the nav */}

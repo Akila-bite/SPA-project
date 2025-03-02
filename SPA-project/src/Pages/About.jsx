@@ -8,7 +8,7 @@ export default function About () {
 
   return (
     <div className="container mt-5">
-      {/* About Foodify Section */}
+      {/* The about section for Foodify */}
       <div className="row justify-content-center">
         <div className="col-md-8">
           <div className="card shadow-lg border-0">
@@ -29,7 +29,7 @@ export default function About () {
                     our app makes meal planning simple and enjoyable!
                   </p>
                   <p className="card-text">
-                    <small className="text-muted">Taste the world, one recipe at a time!</small>
+                    <small className="text-muted">Recipes that turn out great all the time!</small>
                   </p>
                 </div>
               </div>
@@ -46,9 +46,11 @@ export default function About () {
           <a href="https://twitter.com" target="_blank" rel="noopener noreferrer">
             <i className="bi bi-twitter fs-3 text-primary"></i>
           </a>
+          <p>Catch all angles of these delicious meals, in HD! Follow us on Instagram.</p>
           <a href="https://instsgram.com" target="_blank" rel="noopener noreferrer">
             <i className="bi bi-instagram fs-3 text-dark"></i>
           </a>
+          <p>Watch our passionate home chefs on our Youtube channel</p>
           <a href="https://youtube.com" target="_blank" rel="noopener noreferrer">
             <i className="bi bi-youtube fs-3 text-primary"></i>
           </a>
