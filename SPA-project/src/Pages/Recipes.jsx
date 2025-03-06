@@ -1,6 +1,7 @@
 import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { fetchRecipes, addToFavorites, removeFromFavorites } from "../features/recipesSlice";
+import { fetchRecipes, addToFavorites, removeFromFavorites } from "../app/recipeSlice";
+
 
 export default function RecipeList() {
   const dispatch = useDispatch();
