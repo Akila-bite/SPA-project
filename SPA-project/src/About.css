@@ -8,8 +8,22 @@
 
 /* Add custom padding to the container */
 .about-container {
+    margin-top: 70px;
     padding: 40px 20px;
     background-color: #f8f9fa;
+    background-image: url('./assets/Ginger-beer-float.jpg'); /* Path to your image */
+    background-size: cover;  /* Ensure the image covers the entire container */
+    background-position: center; /* Center the image */
+    background-attachment: fixed; /* Optional: keeps the background image fixed on scroll */
+}
+
+.about-text {
+    color: black;
+    font-size: larger;
+}
+
+.contact-text {
+    color: black;
 }
 
 /* Customize button */

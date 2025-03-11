@@ -6,6 +6,7 @@ import Recipes from "./Pages/Recipes";
 import Home from "./Pages/Home";
 import FavoriteRecipes from "./Pages/FavoriteRecipes";
 import About from "./Pages/About";
+import Queries from "./Pages/Queries";
 
 
 export default function App() {
@@ -19,6 +20,7 @@ export default function App() {
             <Route path="/recipes" element={<Recipes />} />
             <Route path="/favorites" element={<FavoriteRecipes />} />
             <Route path="/about" element={<About />} />
+            <Route path="/queries" element={<Queries />} />
           </Routes>
         </main>
         <Footer />
