@@ -1,0 +1,96 @@
+/* Recipe Card Container */
+.recipe-card {
+  margin-top: 70px; /* Adds space between the top of the page and the recipe card */
+  padding: 20px;
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Recipe Title */
+.recipe-card h2 {
+  text-align: center;
+  font-size: 2rem;
+  font-weight: 600;
+  margin-bottom: 24px;
+}
+
+/* Recipe Detail Container */
+.recipe-detail-container {
+  display: flex;
+  flex-direction: column; /* Stack elements on small screens */
+  gap: 24px;
+  margin-top: 24px;
+}
+
+@media (min-width: 768px) {
+  .recipe-detail-container {
+    flex-direction: row; /* Align elements side by side on larger screens */
+    justify-content: space-between;
+  }
+}
+
+/* Recipe Image */
+.recipe-image-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-shrink: 0; /* Prevent image from shrinking */
+}
+
+.recipe-image-container img {
+  width: 80%; /* Reduce the image size */
+  max-width: 640px; /* Set a maximum width */
+  height: auto;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  margin-bottom: 16px;
+}
+
+@media (min-width: 768px) {
+  .recipe-image-container img {
+    margin-bottom: 0; /* Remove bottom margin for larger screens */
+  }
+}
+
+/* Ingredients Section */
+.ingredients-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  flex-grow: 1; /* Ensure ingredients section takes up remaining space */
+}
+
+.ingredients-container h2 {
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin-bottom: 12px;
+}
+
+.ingredients-list {
+  list-style-type: disc;
+  padding-left: 20px;
+  margin-top: 0;
+}
+
+.ingredient-item {
+  font-size: 1.28rem;
+  color: #4a4a4a;
+  margin-bottom: 8px;
+}
+
+/* Instructions Section */
+.instructions-container h2 {
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin-bottom: 12px;
+}
+
+.instructions-text {
+  font-size: 1.28rem;
+  color: #4a4a4a;
+  line-height: 1.8;
+}
+
+
+  

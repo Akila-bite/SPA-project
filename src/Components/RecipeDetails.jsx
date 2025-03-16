@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
+import "./RecipeDetails.css";
 
 const RecipeDetails = () => {
   const { id } = useParams();  // Get the recipe ID from the URL
@@ -38,25 +39,25 @@ const RecipeDetails = () => {
   if (!recipe) return <p>No recipe found.</p>;
 
   return (
-    <div className="container mt-5">
-      <h2 className="text-center text-3xl font-semibold mb-4">{recipe.name}</h2>
+    <div className="recipe-card">
+      <h2>{recipe.name}</h2>
 
-      <div className="recipe-detail-container grid grid-cols-1 md:grid-cols-2 gap-6">
+      <div className="recipe-detail-container">
         {/* Recipe Image */}
         <div className="recipe-image-container">
           <img
             src={recipe.image}
             alt={recipe.name}
-            className="recipe-image w-full rounded-lg shadow-lg"
+            className="recipe-image"
           />
         </div>
 
         {/* Ingredients Section */}
         <div className="ingredients-container">
-          <h3 className="text-xl font-semibold mb-3">Ingredients:</h3>
-          <ul className="ingredients-list list-disc pl-5 space-y-2">
+          <h2>Ingredients:</h2>
+          <ul className="ingredients-list">
             {recipe.ingredients.map((ingredient, index) => (
-              <li key={index} className="ingredient-item text-lg text-gray-700">
+              <li key={index} className="ingredient-item">
                 {ingredient}
               </li>
             ))}
@@ -65,12 +66,13 @@ const RecipeDetails = () => {
       </div>
 
       {/* Instructions Section */}
-      <div className="instructions-container mt-6">
-        <h3 className="text-xl font-semibold mb-3">Instructions:</h3>
-        <p className="instructions-text text-lg text-gray-700">{recipe.instructions}</p>
+      <div className="instructions-container">
+        <h2>Instructions:</h2>
+        <p className="instructions-text">{recipe.instructions}</p>
       </div>
     </div>
   );
+
 };
 
 export default RecipeDetails;
