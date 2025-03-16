@@ -1,0 +1,87 @@
+/* About.css */
+
+
+
+
+
+/* Add custom padding to the container */
+.about-container {
+    padding: 40px 20px;
+    background-color: #f8f9fa;
+    background-image: url('./assets/Ginger-beer-float.jpg'); /* Path to your image */
+    background-size: cover;  /* Ensure the image covers the entire container */
+    background-position: center; /* Center the image */
+    background-attachment: fixed; 
+
+}
+
+/* to override some Bootstrap card styles */
+.card {
+    border-radius: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    margin-top: 50px;
+}
+
+.card-body {
+    padding: 20px;
+    max-width: 600px; /* Adjust based on design */
+    margin: 0 auto; /* Center the card */
+}
+
+.about-text {
+    color: black;
+    font-size: larger;
+    width: 100%;
+    line-height: 1.6;
+    letter-spacing: 0.5px;
+    text-align: justify; 
+}
+
+/* styling the QUERY text to make it look more clickable */
+.query-link {
+    display: inline-block;
+    font-size: 1.1rem;  /* Slightly larger */
+    font-weight: 500;
+    color: #198754;
+    text-decoration: none;
+    transition: all 0.3s ease-in-out;
+  }
+  
+  .query-link:hover {
+    color: #145c32; /* Darker green on hover */
+    text-decoration: underline;
+  }
+  
+  .query-link:active {
+    transform: scale(0.98); /* Small press effect */
+  }
+  
+
+
+/* SOCIAL MEDIA section styles */
+.about-socials {
+    max-width: 400px; /* Set a fixed width (adjust as needed) */
+    width: auto;
+    margin: 20px auto; /* Centers it horizontally */
+    padding: 20px; /* Adds spacing inside */
+    background: rgba(255, 255, 255, 0.2); /* Light overlay */
+    backdrop-filter: blur(10px); /* Blurry effect */
+    border-radius: 15px; /* Rounded corners */
+    text-align: center; /* Ensures text is centered */
+    /* display: inline-block;  */
+    display: flex;
+    flex-direction: column;
+}
+
+.icon-text {
+    font-size: large;
+    font-weight: bold;
+}
+
+
+/* .contact-text {
+    color: black;
+} */
+
+
+

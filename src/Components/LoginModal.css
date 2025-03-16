@@ -1,0 +1,71 @@
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: auto;
+  background-color: white;
+  z-index: 999; /* Place below modal content */
+}
+
+.modal-content {
+  background-color: white;
+  padding: 20px;
+  width: 400px; /* Set fixed width for the modal */
+  max-width: 50%; /* Ensure it doesn't exceed 90% of the viewport width */
+  border-radius: 8px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: fixed;
+  top: 80px; /* Push the modal below the navbar */
+  left: 50%;
+  transform: translateX(-50%); /* Center the modal horizontally */
+  z-index: 1000; /* Ensure it is above other content */
+  height: calc(100vh-100px);
+  overflow-y: auto; 
+  padding-bottom: 20px;
+
+}
+
+
+.close-button {
+  background: none;
+  border: none;
+  font-size: 20px;
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  cursor: pointer;
+}
+
+h2 {
+  margin-bottom: 15px;
+}
+
+input {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+button {
+  padding: 10px 15px;
+  margin-top: 10px;
+  border: none;
+  background-color: #4CAF50;
+  color: black;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.error {
+  color: red;
+  margin-bottom: 10px;
+}
+
+p {
+  margin-top: 15px;
+}

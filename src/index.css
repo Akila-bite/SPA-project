@@ -1,0 +1,378 @@
+* {
+  box-sizing: border-box; /* Prevents unintended width issues */
+  max-width: 100%; /* Prevents oversized elements */
+
+
+  font-family: Pompiere, cursive;
+  font-weight: 400;
+  font-style: normal;
+  line-height: 1.8;
+  
+}
+
+
+
+/* LINK STYLING FOR ENTIRE APP */
+a {
+  font-weight: 500;
+  color: #646cff;
+  text-decoration: inherit;
+}
+a:hover {
+  color: #535bf2;
+}
+
+
+
+/* STYLES WRAPPING ENTIRE APPLICATION */
+.app {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh; /* Ensures full height of viewport */
+}
+
+/* This expands the main content, pushing the footer down */
+main {
+  flex-grow: 1;
+  width: 100%;
+}
+
+
+body {
+  margin: 0; 
+  margin-top: 70px;
+  display: flex;
+  place-items: center;
+  width: 100%;
+  overflow-x: hidden;
+  /* min-width: 320px; */
+  min-height: 100vh;
+  padding: 0;
+  background-color: beige;
+  color: #262626;
+}
+
+
+
+@media (prefers-color-scheme: light) {
+  :root {
+    color: #213547;
+    background-color: beige;
+  }
+  button {
+    background-color: #f9f9f9;
+  }
+} 
+
+/*.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: beige;
+  height: 70px;
+  padding: 10px 20px; 
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  z-index: 1000;
+  overflow: hidden;
+ } */
+
+ .header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: beige;
+  height: 70px; /* Adjust height as needed */
+  padding: 10px 20px; /* Padding for spacing */
+  display: flex;
+  justify-content: center;
+  align-items: center; /* Vertically align navbar */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Optional box-shadow */
+  z-index: 1000; /* Ensure it stays on top */
+}
+
+ .logo {
+  font-weight: 500;
+  font-size: 56px;
+  position: absolute; /* Take it out of normal flow */
+  left: 20px; 
+}
+
+
+
+/* STYLES FOR THE NAVBAR */
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: center; /* Center navbar items */
+  max-width: 100%;
+  padding: 0 20px;
+  overflow: hidden;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 30px;
+  flex-wrap: wrap;
+  justify-content: center; /* Center items horizontally */
+  width: 100%; /* Make sure it takes full width */
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: #333;
+  font-weight: 500;
+  font-size: 24px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-shrink: 0; /* Prevents icons from getting squeezed */
+}
+
+.nav-links a .material-icons {
+  font-size: 30px; /* Increase icon size */
+}
+
+/* Mobile view adjustments */
+@media (max-width: 768px) {
+  .navbar {
+    padding: 0 10px; /* Add some padding for mobile view */
+  }
+
+  .nav-links {
+    display: flex;
+    flex-direction: column; /* Stack the items vertically */
+    align-items: center; /* Center the items in the column */
+    width: 100%; /* Ensure full width */
+    padding: 10px 0; /* Some padding to make it look good */
+    background-color: beige; /* Optional background color for better visibility */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Optional shadow for the dropdown effect */
+  }
+
+  .nav-links a {
+    font-size: 20px; /* Adjust font size for smaller screens */
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+
+
+  /* .nav-links {
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    top: 60px;
+    right: 10px;
+    background: white;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    padding: 10px;
+  }
+
+  .nav-links.open {
+    display: flex;
+  } */
+
+
+
+/* login button in NAVBAR */
+.nav-links button {
+  background: none;
+  border: none;
+  color: #333;
+  font-weight: 500;
+  font-size: 24px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+}
+
+.nav-links button .material-icons {
+  font-size: 30px; /* Match icon size */
+}
+
+
+
+
+/* SEARCHBAR STYLES */
+
+/* Search Container */
+.search-container {
+  max-width: 400px;
+  display: flex;
+  justify-content: center;
+  padding-left: 16px;
+  padding-right: 16px;
+}
+
+/* Search Form */
+.search-form {
+  display: flex;
+  width: 100%;
+  max-width: 600px;
+  background-color: beige;
+  border: 1px solid #d1d5db;
+  border-radius: 50px; 
+  box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.1);
+  padding: 10px 14px;
+  align-items: center;
+  height: 40px;
+}
+
+/* Search Input */
+.search-input {
+  flex-grow: 1;
+  outline: none;
+  background: transparent;
+  color: #374151;
+  font-size: 18px; 
+  border: none;
+  height: 100%; /*fills the navbar height */
+}
+
+.search-input::placeholder {
+  color: #9ca3af;
+  font-size: 18px; /* Match input text size */
+}
+
+
+
+/* FOOTER */
+.footer {
+  width: 100vw;
+  background: #f8f8f8;
+  text-align: center;
+  padding: 15px;
+  border-top: none;
+  color: black;
+}
+
+
+
+/* HOME PAGE STYLES */
+
+/* Homepage container */
+.homepage {
+  position: relative;
+  width: 100vw;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  /* padding: 20px; */
+  box-sizing: border-box;
+  
+}
+
+/* Full-width welcome image */
+.welcome-image {
+  width: 100vw;
+  height: auto;
+  display: block;
+  max-height: 100vh; /* Prevents cutting off */
+  object-fit: cover;
+  z-index: 1;
+}
+
+/* Centered image container with spacing */
+.image-container {
+  margin-top: 30px;
+  position: relative;
+  text-align: center;
+  width: 100%;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Adds slight shadow */
+}
+
+
+.hero{
+   /* margin-bottom: 100px; */
+   position: relative;
+   overflow:hidden;
+   min-height: 100vh;
+   margin-top: 30px;
+  height: 100vh;
+  }
+
+  /* .hero-video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: 1;
+  } */
+
+ /* The overlay allows the user to see the video, with some blur to make the writing over it readable */
+  .hero .overlay {
+    position: absolute;
+    top: 0%;
+    left: 0%;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5); /* Semi-transparent overlay */
+    z-index: 1;}
+
+  .hero-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    text-align: center;
+    z-index: 2;
+    font-weight: bolder;
+  }
+
+  /* The display class for the hero text makes it pop out to the user as they open the website */
+  .display-1{
+    font-weight: bold;
+  }
+
+ 
+
+
+.bottom-container {
+  display: flex;
+  justify-content: center; /* Centers images in the row */
+  flex-wrap: wrap; /* Allows wrapping on smaller screens */
+  width: 90%; /* Prevents images from being too spread out */
+  max-width: 1200px; /* Limits container width */
+  margin-top: 30px;
+  gap: 20px;
+}
+
+
+.bottom-image {
+  height: 250px; /* Adjust height for medium size */
+  width: auto; /* Maintains aspect ratio */
+  max-width: 30%; /* Ensures images don't exceed a third of the width */
+  border-radius: 10px; /* Softens edges */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Adds slight shadow for depth */
+  transition: transform 0.3s ease-in-out;
+}
+
+.bottom-image:hover {
+  transform: scale(1.05); /* Subtle zoom effect on hover */
+}
+
+
+
+
