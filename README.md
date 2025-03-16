@@ -4,19 +4,21 @@
 Foodify
 Foodify is a web application that helps users discover new recipes and keep track of their favorite ones. The app allows users to browse a variety of recipes, filter them by category, and save their favorites.
 
-Features
+## Features
 Browse and search recipes.
 Filter recipes by category.
 Save favorite recipes for easy access.
 User authentication via Firebase.
 Responsive design for optimal viewing on various devices.
-Technologies Used
+
+## Technologies Used
 Frontend: React, Redux, Bootstrap, HTML, CSS
-Backend: Node.js (Optional if needed for API connection or custom backend)
+Backend: Node.js
 Authentication: Firebase Authentication
 State Management: Redux, Redux Persist
-API: Custom Recipe API (or an external API)
-Installation
+API: Custom Recipe API
+
+## Installation
 Clone the repository:
 bash
 Copy code
