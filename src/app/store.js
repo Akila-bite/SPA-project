@@ -1,36 +1,43 @@
 
-
 import { configureStore } from "@reduxjs/toolkit";
 import { persistStore, persistReducer } from "redux-persist";
 import storage from "redux-persist/lib/storage"; // Default storage (localStorage)
-import userReducer from "./userSlice"; // Import userReducer
-import recipesReducer from "./recipesSlice"; 
+import userReducer from "./userSlice";
+import recipesReducer from "./recipesSlice";
 import searchReducer from "./searchSlice";
+import { combineReducers } from "redux";
+import { FLUSH, REHYDRATE, PAUSE, PERSIST, PURGE, REGISTER } from "redux-persist";
 
-
+// Persist config
 const persistConfig = {
   key: "root",
   storage,
-  whitelist: ["user", "recipes"], // Persist user and recipes
- 
+  whitelist: ["user", "recipes"], // Persist only user and recipes
 };
 
-// Create persisted reducers
-const persistedUserReducer = persistReducer(persistConfig, userReducer);
-const persistedRecipesReducer = persistReducer(persistConfig, recipesReducer);
+// Combine reducers
+const rootReducer = combineReducers({
+  user: userReducer, 
+  recipes: recipesReducer,
+  search: searchReducer, // Not persisted
+});
 
+// Wrap entire root reducer with persistReducer
+const persistedReducer = persistReducer(persistConfig, rootReducer);
+
+// Configure store with serializable check fix
 const store = configureStore({
-  reducer: {
-    user: persistedUserReducer, // User slice persisted
-    recipes: persistedRecipesReducer, // Recipes slice persisted
-    search: searchReducer,
-  },
+  reducer: persistedReducer,
+  middleware: (getDefaultMiddleware) =>
+    getDefaultMiddleware({
+      serializableCheck: {
+        ignoredActions: [FLUSH, REHYDRATE, PAUSE, PERSIST, PURGE, REGISTER],
+      },
+    }),
   devTools: process.env.NODE_ENV !== "production",
 });
 
+// Create persistor
 const persistor = persistStore(store);
 
-
 export { store, persistor };
-
-

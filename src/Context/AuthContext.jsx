@@ -17,7 +17,7 @@ export const AuthProvider = ({ children }) => {
       setLoading(false); // Set loading to false after the auth state is checked
     });
 
-    // Clean up subscription on component unmount
+    
     return () => unsubscribe();
   }, []);
 
