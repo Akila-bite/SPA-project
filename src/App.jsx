@@ -10,7 +10,7 @@ import FavoriteRecipes from "./Pages/FavoriteRecipes";
 import About from "./Pages/About";
 import Queries from "./Pages/Queries";
 import ProtectedRoute from "./Components/ProtectedRoute"; // Import ProtectedRoute
-import { AuthProvider } from "./context/AuthContext"; // Import AuthProvider
+import { AuthProvider } from "./Context/AuthContext"; // Import AuthProvider
 import RecipeDetails from "./Components/RecipeDetails"; // Your RecipeDetails component
 
 
