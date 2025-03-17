@@ -1,16 +1,7 @@
-.modal-overlay {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: auto;
-  background-color: white;
-  z-index: 999; /* Place below modal content */
-}
+
 
 .modal-content {
   background-color: white;
-  padding: 20px;
   width: 400px; /* Set fixed width for the modal */
   max-width: 50%; /* Ensure it doesn't exceed 90% of the viewport width */
   border-radius: 8px;
@@ -18,14 +9,22 @@
   flex-direction: column;
   align-items: center;
   position: fixed;
-  top: 80px; /* Push the modal below the navbar */
+  top: 80px;
   left: 50%;
   transform: translateX(-50%); /* Center the modal horizontally */
   z-index: 1000; /* Ensure it is above other content */
-  height: calc(100vh-100px);
-  overflow-y: auto; 
-  padding-bottom: 20px;
+  height: 700px;
+  /* overflow-y: auto;  */
+  margin-top: 460px;
 
+}
+
+.modal-footer {
+  background-color: white;
+  margin-top: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 
@@ -66,6 +65,7 @@ button {
   margin-bottom: 10px;
 }
 
-p {
+.modal-content .p {
   margin-top: 15px;
+  
 }

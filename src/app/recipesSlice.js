@@ -1,68 +1,8 @@
 
 
-// import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
-
-// export const fetchRecipes = createAsyncThunk("recipes/fetchRecipes", async () => {
-//   console.log("fetchRecipes called!"); // Debugging
-//   const response = await fetch("http://localhost:5000/api/recipes");
-//   console.log("API Response:", response); // Debugging
-
-//   const data = await response.json();
-//   console.log("Fetched Data:", data); // Debugging
-//   return data;
-// });
-
-// const recipesSlice = createSlice({
-//   name: "recipes",
-//   initialState: {
-//     items: [],  // All recipes
-//     favorites: [],  // Favorite recipes
-//     status: "idle",  // ✅ Fixed typo
-//     error: null,
-//   },
-//   reducers: {
-//     addFavorite: (state, action) => {
-//       const recipe = action.payload;
-//       if (!state.favorites.find((fav) => fav.id === recipe.id)) {
-//         state.favorites.push(recipe);
-//       }
-//     },
-//     removeFavorite: (state, action) => {
-//       state.favorites = state.favorites.filter((recipe) => recipe.id !== action.payload);
-//     },
-//   },
-//   extraReducers: (builder) => {
-//     builder
-//       .addCase(fetchRecipes.pending, (state) => {
-//         state.status = "loading";  // ✅ Use status, not loading
-//         state.error = null;
-//       })
-//       .addCase(fetchRecipes.fulfilled, (state, action) => {
-//         state.status = "succeeded"; // ✅ Correct async state
-//         state.items = action.payload;
-//         console.log("Redux State Updated:", state.items); // Debugging
-//       })
-//       .addCase(fetchRecipes.rejected, (state, action) => {
-//         state.status = "failed";
-//         state.error = action.error.message;
-//         console.error("Fetch Error:", action.error.message); // Debugging
-//       });
-//   },
-// });
-
-// // Export actions
-// export const { addFavorite, removeFavorite } = recipesSlice.actions;
-
-// // Export reducer
-// export default recipesSlice.reducer;
-
-// recipesSlice.js
-
-// recipesSlice.js
-
 import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
 
-// This is where you'll call your API or fetch data
+// API call
 export const fetchRecipes = createAsyncThunk(
   "recipes/fetchRecipes",
   async () => {

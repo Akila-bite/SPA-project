@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { auth } from "../firebase"; // Import auth from firebase.js
+import { auth } from "./firebase"; // Import auth from firebase.js
 import { createUserWithEmailAndPassword } from "firebase/auth";
 
 const Register = () => {

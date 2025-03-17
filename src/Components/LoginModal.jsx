@@ -1,7 +1,6 @@
 import { useState } from "react";
 import { signInWithEmailAndPassword, signInWithPopup, GoogleAuthProvider } from "firebase/auth";
 import { auth } from "../firebase";
-import { useNavigate } from "react-router-dom";
 import "./LoginModal.css";
 
 
@@ -10,14 +9,14 @@ export default function LoginModal({ onClose }) {
   const [password, setPassword] = useState("");
   const [error, setError] = useState(null);
   const [isRegistering, setIsRegistering] = useState(false);
-  const navigate = useNavigate();
+  
 
   const handleLogin = async (e) => {
     e.preventDefault();
     try {
       await signInWithEmailAndPassword(auth, email, password);
       onClose();
-      navigate("/favorites");
+      // navigate("/favorites");
     } catch (error) {
       setError(error.message);
     }
@@ -28,7 +27,7 @@ export default function LoginModal({ onClose }) {
     try {
       await signInWithPopup(auth, provider);
       onClose();
-      navigate("/favorites");
+      // navigate("/favorites");
     } catch (error) {
       setError(error.message);
     }
@@ -38,12 +37,10 @@ export default function LoginModal({ onClose }) {
     e.preventDefault();
     console.log("Registering with email:", email);
     onClose();
-    navigate("/favorites");
   };
 
   return (
    <>
-    <div class="modal-overlay" onclick="closeModal()"></div> 
     <div className="modal-content">
       <button className="close-button" onClick={onClose}>✖</button>
       <h2>{isRegistering ? "Register" : "Login"}</h2>
@@ -69,19 +66,20 @@ export default function LoginModal({ onClose }) {
 
       <button onClick={handleGoogleLogin}>Login with Google</button>
 
-      <p>
+      <div className="modal-footer">
         {isRegistering ? (
           <span>
-            Already have an account?{" "}
+            <p>Already have an account?{" "}</p>
             <button onClick={() => setIsRegistering(false)}>Login</button>
           </span>
         ) : (
           <span>
-            Don't have an account?{" "}
+            <p>Don't have an account?{" "}</p>
             <button onClick={() => setIsRegistering(true)}>Register</button>
           </span>
         )}
-      </p>
+        </div>
+      
     </div>
     </> 
   );

@@ -9,9 +9,9 @@ import Home from "./Pages/Home";
 import FavoriteRecipes from "./Pages/FavoriteRecipes";
 import About from "./Pages/About";
 import Queries from "./Pages/Queries";
-import ProtectedRoute from "./Components/ProtectedRoute"; // Import ProtectedRoute
-import { AuthProvider } from "./Context/AuthContext"; // Import AuthProvider
-import RecipeDetails from "./Components/RecipeDetails"; // Your RecipeDetails component
+import ProtectedRoute from "./Components/ProtectedRoute"; 
+import { AuthProvider } from "./Context/AuthContext"; 
+import RecipeDetails from "./Components/RecipeDetails"; 
 
 
 export default function App() {
@@ -36,7 +36,7 @@ function AppContent() {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/recipes" element={<Recipes />} />
-          <Route path="/recipe/:id" element={<RecipeDetails />} /> {/* Full recipe page */}
+          <Route path="/recipe/:id" element={<RecipeDetails />} /> {/* page to view each recipe */}
           <Route 
             path="/favorites" 
             element={
