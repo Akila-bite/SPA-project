@@ -37,7 +37,6 @@ const store = configureStore({
   devTools: process.env.NODE_ENV !== "production",
 });
 
-// Create persistor
 const persistor = persistStore(store);
 
 export { store, persistor };

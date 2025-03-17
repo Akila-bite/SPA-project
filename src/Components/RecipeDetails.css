@@ -10,15 +10,16 @@
 /* Recipe Title */
 .recipe-card h2 {
   text-align: center;
-  font-size: 2rem;
+  font-size: 3rem;
   font-weight: 600;
   margin-bottom: 24px;
+  text-decoration: underline;
 }
 
 /* Recipe Detail Container */
 .recipe-detail-container {
   display: flex;
-  flex-direction: column; /* Stack elements on small screens */
+  flex-direction: column;
   gap: 24px;
   margin-top: 24px;
 }
@@ -74,8 +75,9 @@
 }
 
 .ingredient-item {
-  font-size: 1.28rem;
-  color: #4a4a4a;
+  font-size: 1.2rem;
+  color: black;
+  line-height: 1.6;
   margin-bottom: 8px;
 }
 
@@ -87,9 +89,9 @@
 }
 
 .instructions-text {
-  font-size: 1.28rem;
-  color: #4a4a4a;
-  line-height: 1.8;
+  font-size: 1.2rem;
+  color: black;
+  line-height: 1.6;
 }
 
 

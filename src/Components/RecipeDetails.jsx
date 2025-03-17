@@ -40,7 +40,9 @@ const RecipeDetails = () => {
 
   return (
     <div className="recipe-card">
-      <h2>{recipe.name}</h2>
+
+        <h2>{recipe.name}</h2>
+       
 
       <div className="recipe-detail-container">
         {/* Recipe Image */}
@@ -68,7 +70,13 @@ const RecipeDetails = () => {
       {/* Instructions Section */}
       <div className="instructions-container">
         <h2>Instructions:</h2>
-        <p className="instructions-text">{recipe.instructions}</p>
+        <ol className="instructions-list">
+        {recipe.instructions.map((instructions, index) => (
+        <li key={index} className="instructions-text">
+        {instructions}
+        </li>
+        ))}
+        </ol>
       </div>
     </div>
   );
