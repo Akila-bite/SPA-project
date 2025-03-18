@@ -66,7 +66,7 @@ import { Link } from "react-router-dom";
 import LoginModal from "./LoginModal";
 import { useSelector, useDispatch } from "react-redux";
 import { logoutUser } from "../app/userSlice";
-import { logout } from "../firebase"; // Import logout function
+import { logout } from "../Firebase"; // Import logout function
 
 export default function Navbar() {
   const [showModal, setShowModal] = useState(false);
