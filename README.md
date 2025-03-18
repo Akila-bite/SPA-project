@@ -52,8 +52,11 @@ Create a Firebase project at Firebase Console.
 Add Firebase credentials to your project by setting up the Firebase configuration in the src/firebase.js file.
  ## IMPROVEMENTS THAT COULD BE MADE
  -a pop up modal, or page transfer to a login when a user who isn't registered and logged in to their Foodify account tries to access the Favorites page
+
  -More functionalities and dynamic media added to the home page
+
  -Login modal visibility can be improved
+
  -Users being able to search and filter by specific ingredients
 
 Contributing
