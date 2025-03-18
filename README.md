@@ -33,7 +33,7 @@ Copy code
 git clone https://github.com/Akila-bite/SPA-project.git
 
 ## Deploy
-https://myfoodify-spa.onrender.com
+https://foodify-93h6uzeqf-akilas-projects-fa44ae48.vercel.app
 
 
 Install dependencies:
