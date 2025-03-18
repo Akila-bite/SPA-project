@@ -27,7 +27,7 @@ const RecipeList = () => {
 
   // Navigate to full recipe page
   const navigateToRecipeDetails = (id) => {
-    navigate(`/recipe/${id}`);
+    navigate(`/api/recipe/${id}`);
   };
 
   // Check if the recipe is already in favorites
