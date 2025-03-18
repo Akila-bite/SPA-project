@@ -1,5 +1,5 @@
 import { createContext, useContext, useEffect, useState } from "react";
-import { auth } from "../firebase";
+import { auth } from "../Firebase";
 import { onAuthStateChanged } from "firebase/auth";
 
 // Create authentication context
@@ -14,7 +14,7 @@ export const AuthProvider = ({ children }) => {
     // Listen for authentication state changes
     const unsubscribe = onAuthStateChanged(auth, (user) => {
       setCurrentUser(user); // Set the user object if authenticated, null if not
-      setLoading(false); // Set loading to false after the auth state is checked
+      setLoading(false); // loading false after the auth state is checked
     });
 
     
