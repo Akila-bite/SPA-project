@@ -10,7 +10,7 @@ const FavoriteRecipes = () => {
 
   // Function to navigate to a specific recipe details page
   const navigateToRecipeDetails = (id) => {
-    navigate(`/recipe/${id}`);
+    navigate(`/recipes/${id}`);
   };
 
   return (
