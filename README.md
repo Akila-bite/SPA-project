@@ -32,11 +32,8 @@ Copy code
 
 git clone https://github.com/Akila-bite/SPA-project.git
 
-this is my backend project
-
-git clone https://github.com/Akila-bite/Foodify-backend.git
-
-cd Foodify-backend
+## Deploy
+https://myfoodify-spa.onrender.com
 
 
 Install dependencies:
