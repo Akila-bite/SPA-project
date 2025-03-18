@@ -1,7 +1,7 @@
-
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import { Provider } from "react-redux"; // Import Provider for Redux
-import {store} from "./app/store"; // Import Redux store
+import { Provider } from "react-redux";
+import { store, persistor } from "./app/store"; // Import Redux store
+import { PersistGate } from "redux-persist/integration/react"; // Import PersistGate
 import Header from "./Components/Header";
 import Footer from "./Components/Footer";
 import Recipes from "./Pages/Recipes";
@@ -13,22 +13,21 @@ import ProtectedRoute from "./Components/ProtectedRoute";
 import { AuthProvider } from "./Context/AuthContext"; 
 import RecipeDetails from "./Components/RecipeDetails"; 
 
-
 export default function App() {
   return (
     <Provider store={store}> {/* Wrap entire app with Redux store */}
       <AuthProvider> {/* Wrap app with AuthProvider */}
-        <Router>
-          <AppContent />
-        </Router>
+        <PersistGate loading={null} persistor={persistor}> {/* Ensure persisted state is loaded */}
+          <Router>
+            <AppContent />
+          </Router>
+        </PersistGate>
       </AuthProvider>
     </Provider>
   );
-};
+}
 
 function AppContent() {
- 
-  
   return (
     <div className="app">
       <Header />
@@ -53,6 +52,7 @@ function AppContent() {
     </div>
   );
 };
+
 
 
 
