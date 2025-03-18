@@ -7,7 +7,7 @@ const QueriesPage = () => {
   return (
     <div
       style={{
-        background: "url(src/assets/Rooibos-honey-Basque-cheesecake.jpg) no-repeat center center/cover",
+        background: "url(src/assets/Naartjie-espresso-and-rosemary-shrub.jpg) no-repeat center center/cover",
         minHeight: "100vh",
         display: "flex",
         justifyContent: "flex-start",
@@ -27,7 +27,7 @@ const QueriesPage = () => {
                 data-bs-toggle="collapse"
                 data-bs-target="#faq1"
               >
-                What is Foodify?
+                Are these recipes developed by professional chefs?
               </button>
             </h2>
             <div
@@ -36,7 +36,7 @@ const QueriesPage = () => {
               data-bs-parent="#faqAccordion"
             >
               <div className="accordion-body">
-                Foodify is a platform that helps you discover and save your favorite recipes.
+                Our recipes were developed by professional chefs and home cooks who enjoy innovating and trying new things.
               </div>
             </div>
           </div>
@@ -57,7 +57,7 @@ const QueriesPage = () => {
               data-bs-parent="#faqAccordion"
             >
               <div className="accordion-body">
-                You can save a recipe by clicking the 'Save' button when viewing a recipe.
+                You can save a recipe by clicking the "Add to favorites" button when viewing a recipe. Just make sure you are logged in to your account.
               </div>
             </div>
           </div>

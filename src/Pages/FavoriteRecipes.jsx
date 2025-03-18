@@ -1,6 +1,7 @@
 import React from "react";
 import { useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
+import "./FavoriteRecipes.css"
 
 const FavoriteRecipes = () => {
   // Get the persisted favorites from Redux store
@@ -13,8 +14,11 @@ const FavoriteRecipes = () => {
   };
 
   return (
-    <div className="container mx-auto px-4 py-6">
-      <h2 className="text-2xl font-bold text-center mb-6">Favorite Recipes</h2>
+    <div className="favorites-page-container">
+      <div className="mx-auto px-4 py-6">
+      <h1 className="favorites-heading text-center mb-6">My Favorites
+      <span className="material-icons">favorite</span>
+      </h1>
       <div className="row">
         {/* Check if there are any favorite recipes */}
         {favorites.length > 0 ? (
@@ -34,7 +38,7 @@ const FavoriteRecipes = () => {
 
                   {/* Button to navigate to the recipe details */}
                   <button
-                    className="btn btn-primary btn-sm mt-2"
+                    className="btn btn-custom btn-sm mt-2"
                     onClick={() => navigateToRecipeDetails(recipe.id)}
                   >
                     View Recipe
@@ -48,6 +52,7 @@ const FavoriteRecipes = () => {
         )}
       </div>
     </div>
+   </div> 
   );
 };
 

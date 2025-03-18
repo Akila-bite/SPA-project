@@ -1,0 +1,39 @@
+body {
+  
+  color: #262626;
+  
+}
+
+.favorites-page-container {
+  margin-top: 100px;
+  min-height: 100vh; /* Ensure the page takes at least full height */
+  /* display: flex; */
+  /* flex-direction: column; */
+  justify-content: flex-start; /* Ensure content starts at the top */
+}
+
+@media (max-width: 768px) {
+  .recipe-page-container {
+    padding-top: 2rem; /* Adjust padding for smaller screens */
+  }
+}
+
+.favorites-heading {
+  display: inline-block;
+  text-align: center;
+  font-size: 2.5rem;
+}
+
+.material-icons {
+  font-size: inherit;
+  line-height: 1;
+  vertical-align: middle;
+  margin-left: 8px;
+}
+
+
+.btn-custom {
+    background-color: #d4af37 !important ; /* Gold color */
+    border-color: #c2982a !important; /* Darker gold border */
+    color: white !important; /* Text color */
+  }

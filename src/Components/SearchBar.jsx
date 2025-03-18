@@ -1,6 +1,8 @@
-import { useState } from "react";
-import { useDispatch } from "react-redux";
-import { filterRecipes } from "../app/recipesSlice"; // Import your filterRecipes action
+
+
+import {useState} from "react";
+import { useDispatch} from "react-redux";
+import { filterRecipes} from "../app/recipesSlice"; // Import your filterRecipes action
 
 export default function SearchBar({ onSearch }) {
   const [query, setQuery] = useState("");
@@ -13,10 +15,12 @@ export default function SearchBar({ onSearch }) {
   };
 
   const handleSearch = (e) => {
-    e.preventDefault();
+     e.preventDefault();
     // Dispatch the action to filter recipes when the search is triggered
     dispatch(filterRecipes(query)); 
   };
+
+  
 
   return (
     <div className="search-container">
@@ -29,6 +33,7 @@ export default function SearchBar({ onSearch }) {
           onChange={handleInputChange}
         />
       </form>
+      <p className="bottom-search-text">search by meal or category (breakfast, lunch, etc)</p>
     </div>
   );
 }

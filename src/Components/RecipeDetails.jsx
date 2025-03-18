@@ -13,7 +13,7 @@ const RecipeDetails = () => {
     // Fetch recipe data from the API based on the ID
     const fetchRecipe = async () => {
       try {
-        const response = await fetch(`http://localhost:5000/api/recipes/${id}`);
+        const response = await fetch(`https://myfoodify-backend.onrender.com/api/recipes/${id}`);
         if (!response.ok) {
           throw new Error("Failed to fetch recipe data");
         }

@@ -19,7 +19,7 @@ const persistConfig = {
 const rootReducer = combineReducers({
   user: userReducer, 
   recipes: recipesReducer,
-  search: searchReducer, // Not persisted
+  search: searchReducer,
 });
 
 // Wrap entire root reducer with persistReducer

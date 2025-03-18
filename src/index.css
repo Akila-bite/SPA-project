@@ -202,9 +202,12 @@ body {
   max-width: 400px;
   display: flex;
   justify-content: center;
+  flex-direction: column; /* Stacks elements vertically */
+  align-items: center; /* Centers content */
   padding-left: 16px;
   padding-right: 16px;
 }
+
 
 /* Search Form */
 .search-form {
@@ -218,6 +221,7 @@ body {
   padding: 10px 14px;
   align-items: center;
   height: 40px;
+  margin-bottom: 6px;
 }
 
 /* Search Input */
@@ -234,6 +238,10 @@ body {
 .search-input::placeholder {
   color: #9ca3af;
   font-size: 18px; /* Match input text size */
+}
+
+.bottom-search-text {
+  font-size: 18px;
 }
 
 
