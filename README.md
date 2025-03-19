@@ -32,8 +32,10 @@ Copy code
 
 git clone https://github.com/Akila-bite/SPA-project.git
 
-## Deploy
+## Deploys
 https://foodify-93h6uzeqf-akilas-projects-fa44ae48.vercel.app
+
+https://myfoodifyspa.netlify.app/
 
 
 Install dependencies:
