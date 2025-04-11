@@ -1,61 +1,129 @@
-import React from "react";
+// import React from "react";
+// import { useSelector } from "react-redux";
+// import { useNavigate } from "react-router-dom";
+// import "./FavoriteRecipes.css"
+
+// const FavoriteRecipes = () => {
+//   // Get the persisted favorites from Redux store
+//   const favorites = useSelector((state) => state.recipes.favorites || []);
+//   const navigate = useNavigate();
+
+//   // Function to navigate to a specific recipe details page
+//   const navigateToRecipeDetails = (id) => {
+//     navigate(`/recipe/${id}`);
+//   };
+
+//   return (
+//     <div className="favorites-page-container">
+//       <div className="mx-auto px-4 py-6">
+//       <h1 className="favorites-heading text-center mb-6">My Favorites
+//       <span className="material-icons">favorite</span>
+//       </h1>
+//       <div className="row">
+//         {/* Check if there are any favorite recipes */}
+//         {favorites.length > 0 ? (
+//           favorites.map((recipe) => (
+//             <div key={recipe.id} className="col-md-4 mb-4">
+//               <div className="card" style={{ width: "18rem" }}>
+//                 {/* Display recipe image */}
+//                 <img
+//                   src={recipe.image}
+//                   className="card-img-top"
+//                   alt={recipe.name}
+//                   style={{ height: "200px", objectFit: "cover" }}
+//                 />
+//                 <div className="card-body">
+//                   {/* Recipe title */}
+//                   <h5 className="card-title">{recipe.name}</h5>
+
+//                   {/* Button to navigate to the recipe details */}
+//                   <button
+//                     className="btn btn-custom btn-sm mt-2"
+//                     onClick={() => navigateToRecipeDetails(recipe.id)}
+//                   >
+//                     View Recipe
+//                   </button>
+//                 </div>
+//               </div>
+//             </div>
+//           ))
+//         ) : (
+//           <p className="text-center">No favorite recipes yet.</p>
+//         )}
+//       </div>
+//     </div>
+//    </div> 
+//   );
+// };
+
+// export default FavoriteRecipes;
+
+import React, { useEffect, useState } from "react";
 import { useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
-import "./FavoriteRecipes.css"
+import "./FavoriteRecipes.css";
+import LoginModal from "../Components/LoginModal"; 
 
 const FavoriteRecipes = () => {
-  // Get the persisted favorites from Redux store
+  const user = useSelector((state) => state.user.user);
   const favorites = useSelector((state) => state.recipes.favorites || []);
   const navigate = useNavigate();
 
-  // Function to navigate to a specific recipe details page
+  const [showModal, setShowModal] = useState(false);
+
+  useEffect(() => {
+    if (!user) {
+      setShowModal(true);
+    }
+  }, [user]);
+
   const navigateToRecipeDetails = (id) => {
     navigate(`/recipe/${id}`);
   };
 
+  if (!user) {
+    return showModal ? <LoginModal /> : null;
+  }
+
   return (
     <div className="favorites-page-container">
       <div className="mx-auto px-4 py-6">
-      <h1 className="favorites-heading text-center mb-6">My Favorites
-      <span className="material-icons">favorite</span>
-      </h1>
-      <div className="row">
-        {/* Check if there are any favorite recipes */}
-        {favorites.length > 0 ? (
-          favorites.map((recipe) => (
-            <div key={recipe.id} className="col-md-4 mb-4">
-              <div className="card" style={{ width: "18rem" }}>
-                {/* Display recipe image */}
-                <img
-                  src={recipe.image}
-                  className="card-img-top"
-                  alt={recipe.name}
-                  style={{ height: "200px", objectFit: "cover" }}
-                />
-                <div className="card-body">
-                  {/* Recipe title */}
-                  <h5 className="card-title">{recipe.name}</h5>
-
-                  {/* Button to navigate to the recipe details */}
-                  <button
-                    className="btn btn-custom btn-sm mt-2"
-                    onClick={() => navigateToRecipeDetails(recipe.id)}
-                  >
-                    View Recipe
-                  </button>
+        <h1 className="favorites-heading text-center mb-6">
+          My Favorites <span className="material-icons">favorite</span>
+        </h1>
+        <div className="row">
+          {favorites.length > 0 ? (
+            favorites.map((recipe) => (
+              <div key={recipe.id} className="col-md-4 mb-4">
+                <div className="card" style={{ width: "18rem" }}>
+                  <img
+                    src={recipe.image}
+                    className="card-img-top"
+                    alt={recipe.name}
+                    style={{ height: "200px", objectFit: "cover" }}
+                  />
+                  <div className="card-body">
+                    <h5 className="card-title">{recipe.name}</h5>
+                    <button
+                      className="btn btn-custom btn-sm mt-2"
+                      onClick={() => navigateToRecipeDetails(recipe.id)}
+                    >
+                      View Recipe
+                    </button>
+                  </div>
                 </div>
               </div>
-            </div>
-          ))
-        ) : (
-          <p className="text-center">No favorite recipes yet.</p>
-        )}
+            ))
+          ) : (
+            <p className="text-center">No favorite recipes yet.</p>
+          )}
+        </div>
       </div>
     </div>
-   </div> 
   );
 };
 
 export default FavoriteRecipes;
+
 
 

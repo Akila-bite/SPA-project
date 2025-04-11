@@ -101,7 +101,7 @@
 
 import React, { useEffect } from "react";
  import { useDispatch, useSelector } from "react-redux";
- import { fetchRecipes, addFavorite, removeFavorite, filterRecipes } from "../app/recipesSlice"; // Adjust path if needed
+ import { fetchRecipes, addFavorite, removeFavorite, filterRecipes } from "../app/recipesSlice"; // recipes fetctched from API in recipeSlice
  import { useNavigate } from "react-router-dom";
  import SearchBar from "../Components/SearchBar"; 
  import "./Recipes.css";
@@ -138,9 +138,9 @@ import React, { useEffect } from "react";
    // Toggle favorite status
    const handleToggleFavorite = (recipe) => {
      if (isFavorite(recipe.id)) {
-       dispatch(removeFavorite(recipe)); // Remove from favorites if already in favorites
+       dispatch(removeFavorite(recipe)); // "Remove from favorites" if already in favorites
      } else {
-       dispatch(addFavorite(recipe)); // Add to favorites if not in favorites
+       dispatch(addFavorite(recipe)); // "Add to favorites" if not in favorites
      }
    };
  

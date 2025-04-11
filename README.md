@@ -56,6 +56,8 @@ Add Firebase credentials to your project by setting up the Firebase configuratio
 
  -More functionalities and dynamic media added to the home page
 
+ -The navbar toggle function and overall display, when on a smaller screen should be changed to a toggle bar
+
  -Login modal visibility can be improved
 
  -Users being able to search and filter by specific ingredients
