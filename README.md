@@ -24,6 +24,14 @@ State Management: Redux, Redux Persist
 
 API: Custom Recipe API
 
+## Advanced react features used
+
+-Auth context: shares authentication state of the user across the application
+
+-Custom hook: Auth context uses a custom hook that can be used in any page or component where authorisation is required
+
+-Redux persist: saves the redux state to local storage; this allows users to save their favorite recipes, and be able to access them after refreshing the page or closing the browser
+
 ## Installation
 
 Clone the repository:
@@ -57,8 +65,6 @@ Add Firebase credentials to your project by setting up the Firebase configuratio
  -More functionalities and dynamic media added to the home page
 
  -The navbar toggle function and overall display, when on a smaller screen should be changed to a toggle bar
-
- -Login modal visibility can be improved
 
  -Users being able to search and filter by specific ingredients
 
