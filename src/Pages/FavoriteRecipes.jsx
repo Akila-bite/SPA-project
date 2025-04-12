@@ -62,25 +62,20 @@ import React, { useEffect, useState } from "react";
 import { useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import { useAuth } from "../Context/AuthContext";
-import LoginModal from "../Components/LoginModal"; // make sure the path is correct
+import LoginModal from "../Components/LoginModal";
 import "./FavoriteRecipes.css";
 
 const FavoriteRecipes = () => {
   const { currentUser } = useAuth();
   const favorites = useSelector((state) => state.recipes.favorites || []);
   const navigate = useNavigate();
-  const [showLoginModal, setShowLoginModal] = useState(!currentUser);
+  const [showLoginModal, setShowLoginModal] = useState(false);
 
   useEffect(() => {
-    if (currentUser) {
-      setShowLoginModal(false);
+    if (!currentUser) {
+      setShowLoginModal(true);
     }
   }, [currentUser]);
-
-  const handleLoginSuccess = (user) => {
-    // You can store user in Redux here if needed
-    setShowLoginModal(false);
-  };
 
   const navigateToRecipeDetails = (id) => {
     navigate(`/recipe/${id}`);
@@ -88,14 +83,16 @@ const FavoriteRecipes = () => {
 
   return (
     <div className="favorites-page-container">
+      {/* Login Modal */}
       {showLoginModal && (
         <LoginModal
           onClose={() => setShowLoginModal(false)}
-          onSuccess={handleLoginSuccess}
+          onSuccess={() => setShowLoginModal(false)} // Optional, in case you pass a success callback
         />
       )}
 
-      {!showLoginModal && (
+      {/* Page content only shows if user is logged in */}
+      {currentUser && (
         <div className="mx-auto px-4 py-6">
           <h1 className="favorites-heading text-center mb-6">
             My Favorites <span className="material-icons">favorite</span>
@@ -134,6 +131,7 @@ const FavoriteRecipes = () => {
 };
 
 export default FavoriteRecipes;
+
 
 
 
