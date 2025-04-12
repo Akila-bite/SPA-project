@@ -61,69 +61,80 @@
 import React, { useEffect, useState } from "react";
 import { useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
+import { useAuth } from "../Context/AuthContext";
+import LoginModal from "../Components/LoginModal"; // make sure the path is correct
 import "./FavoriteRecipes.css";
-import LoginModal from "../Components/LoginModal"; 
 
 const FavoriteRecipes = () => {
-  const user = useSelector((state) => state.user.user);
+  const { currentUser } = useAuth();
   const favorites = useSelector((state) => state.recipes.favorites || []);
   const navigate = useNavigate();
-
-  const [showModal, setShowModal] = useState(false);
+  const [showLoginModal, setShowLoginModal] = useState(!currentUser);
 
   useEffect(() => {
-    if (!user) {
-      setShowModal(true);
+    if (currentUser) {
+      setShowLoginModal(false);
     }
-  }, [user]);
+  }, [currentUser]);
+
+  const handleLoginSuccess = (user) => {
+    // You can store user in Redux here if needed
+    setShowLoginModal(false);
+  };
 
   const navigateToRecipeDetails = (id) => {
     navigate(`/recipe/${id}`);
   };
 
-  if (!user) {
-    return showModal ? <LoginModal /> : null;
-  }
-
   return (
     <div className="favorites-page-container">
-      <div className="mx-auto px-4 py-6">
-        <h1 className="favorites-heading text-center mb-6">
-          My Favorites <span className="material-icons">favorite</span>
-        </h1>
-        <div className="row">
-          {favorites.length > 0 ? (
-            favorites.map((recipe) => (
-              <div key={recipe.id} className="col-md-4 mb-4">
-                <div className="card" style={{ width: "18rem" }}>
-                  <img
-                    src={recipe.image}
-                    className="card-img-top"
-                    alt={recipe.name}
-                    style={{ height: "200px", objectFit: "cover" }}
-                  />
-                  <div className="card-body">
-                    <h5 className="card-title">{recipe.name}</h5>
-                    <button
-                      className="btn btn-custom btn-sm mt-2"
-                      onClick={() => navigateToRecipeDetails(recipe.id)}
-                    >
-                      View Recipe
-                    </button>
+      {showLoginModal && (
+        <LoginModal
+          onClose={() => setShowLoginModal(false)}
+          onSuccess={handleLoginSuccess}
+        />
+      )}
+
+      {!showLoginModal && (
+        <div className="mx-auto px-4 py-6">
+          <h1 className="favorites-heading text-center mb-6">
+            My Favorites <span className="material-icons">favorite</span>
+          </h1>
+          <div className="row">
+            {favorites.length > 0 ? (
+              favorites.map((recipe) => (
+                <div key={recipe.id} className="col-md-4 mb-4">
+                  <div className="card" style={{ width: "18rem" }}>
+                    <img
+                      src={recipe.image}
+                      className="card-img-top"
+                      alt={recipe.name}
+                      style={{ height: "200px", objectFit: "cover" }}
+                    />
+                    <div className="card-body">
+                      <h5 className="card-title">{recipe.name}</h5>
+                      <button
+                        className="btn btn-custom btn-sm mt-2"
+                        onClick={() => navigateToRecipeDetails(recipe.id)}
+                      >
+                        View Recipe
+                      </button>
+                    </div>
                   </div>
                 </div>
-              </div>
-            ))
-          ) : (
-            <p className="text-center">No favorite recipes yet.</p>
-          )}
+              ))
+            ) : (
+              <p className="text-center">No favorite recipes yet.</p>
+            )}
+          </div>
         </div>
-      </div>
+      )}
     </div>
   );
 };
 
 export default FavoriteRecipes;
+
 
 
 

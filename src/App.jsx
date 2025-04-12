@@ -9,7 +9,6 @@ import Home from "./Pages/Home";
 import FavoriteRecipes from "./Pages/FavoriteRecipes";
 import About from "./Pages/About";
 import Queries from "./Pages/Queries";
-import ProtectedRoute from "./Components/ProtectedRoute"; 
 import { AuthProvider } from "./Context/AuthContext"; 
 import RecipeDetails from "./Components/RecipeDetails"; 
 
@@ -36,14 +35,7 @@ function AppContent() {
           <Route path="/" element={<Home />} />
           <Route path="/recipes" element={<Recipes />} />
           <Route path="/recipe/:id" element={<RecipeDetails />} /> {/* page to view each recipe */}
-          <Route 
-            path="/favorites" 
-            element={
-              <ProtectedRoute>
-                <FavoriteRecipes />
-              </ProtectedRoute>
-            } 
-          />
+          <Route path="/favorites" element={<FavoriteRecipes />} />
           <Route path="/about" element={<About />} />
           <Route path="/queries" element={<Queries />} />
         </Routes>
