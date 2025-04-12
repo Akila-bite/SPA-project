@@ -1,16 +1,16 @@
 import { useState } from "react";
-import { auth } from "./firebase"; // Import auth from firebase.js
-import { createUserWithEmailAndPassword } from "firebase/auth";
+import { useAuth } from "./Context/AuthContext"; // adjust path if needed
 
 const Register = () => {
+  const { registerUser } = useAuth(); // use register from context
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
   const handleRegister = async (e) => {
     e.preventDefault();
     try {
-      await createUserWithEmailAndPassword(auth, email, password);
-      alert("Registration successful!");
+      const { message } = await registerUser(email, password);
+      alert(message); // This will be "Verification email sent..."
     } catch (error) {
       alert(error.message);
     }
@@ -20,8 +20,18 @@ const Register = () => {
     <div>
       <h2>Register</h2>
       <form onSubmit={handleRegister}>
-        <input type="email" placeholder="Email" onChange={(e) => setEmail(e.target.value)} />
-        <input type="password" placeholder="Password" onChange={(e) => setPassword(e.target.value)} />
+        <input
+          type="email"
+          placeholder="Email"
+          value={email}
+          onChange={(e) => setEmail(e.target.value)}
+        />
+        <input
+          type="password"
+          placeholder="Password"
+          value={password}
+          onChange={(e) => setPassword(e.target.value)}
+        />
         <button type="submit">Sign Up</button>
       </form>
     </div>
@@ -29,3 +39,4 @@ const Register = () => {
 };
 
 export default Register;
+
