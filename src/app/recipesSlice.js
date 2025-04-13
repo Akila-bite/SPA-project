@@ -2,15 +2,6 @@
 
 import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
 
-// API call
-// export const fetchRecipes = createAsyncThunk(
-//   "recipes/fetchRecipes",
-//   async () => {
-//     const response = await fetch("https://myfoodify-backend.onrender.com/api/recipes");
-//     const data = await response.json();
-//     return data; // Return the recipes data
-//   }
-// );
 
 export const fetchRecipes = createAsyncThunk(
   "recipes/fetchRecipes",

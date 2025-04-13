@@ -41,8 +41,7 @@ Copy code
 git clone https://github.com/Akila-bite/SPA-project.git
 
 ## Deploys
-
-https://spa-project-akilas-projects-fa44ae48.vercel.app/
+https://my-foodify-spa.vercel.app/
 
 Install dependencies:
 bash

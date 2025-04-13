@@ -1,44 +1,4 @@
-// import { createContext, useContext, useEffect, useState } from "react";
-// import { auth } from "../Firebase";
-// import { onAuthStateChanged } from "firebase/auth";
 
-// // Create authentication context
-// const AuthContext = createContext();
-
-// // AuthProvider component to provide currentUser context
-// export const AuthProvider = ({ children }) => {
-//   const [currentUser, setCurrentUser] = useState(null);
-//   const [loading, setLoading] = useState(true);
-
-//   useEffect(() => {
-//     // Listen for authentication state changes
-//     const unsubscribe = onAuthStateChanged(auth, (user) => {
-//       setCurrentUser(user); // Set the user object if authenticated, null if not
-//       setLoading(false); // loading false after the auth state is checked
-//     });
-
-    
-//     return () => unsubscribe();
-//   }, []);
-
-//   if (loading) {
-//     return (
-//       <div className="flex items-center justify-center h-screen">
-//         <div className="animate-spin rounded-full h-16 w-16 border-t-4 border-b-4 border-black"></div>
-//       </div>
-//     );
-//   }
-  
-
-//   return (
-//     <AuthContext.Provider value={{ currentUser }}>
-//       {children} {/* Only render children after loading is complete */}
-//     </AuthContext.Provider>
-//   );
-// };
-
-// // Custom hook to use authentication context
-// export const useAuth = () => useContext(AuthContext);
 
 import { createContext, useContext, useEffect, useState } from "react";
 import { createUserWithEmailAndPassword, onAuthStateChanged, sendEmailVerification, } from "firebase/auth";
